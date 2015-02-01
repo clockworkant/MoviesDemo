@@ -1,1 +1,1 @@
-include ':app', ':rottentomatoes', ':movieslibraryspec'
+include ':app', ':rottentomatoes', ':movieslibraryspec', ':mockmovieprovider'

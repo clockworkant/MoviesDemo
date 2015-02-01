@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.clockworkant.RottenTomatoesMovieProvider;
 import com.clockworkant.movies.lib.MoviesProvider;
+import com.clockworkant.movies.mock.MockMoviesProvider;
 
 public class App extends Application {
 
@@ -14,7 +15,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         mApp = this;
-        mMoviesProvider = new RottenTomatoesMovieProvider();
+//        mMoviesProvider = new RottenTomatoesMovieProvider();
+        mMoviesProvider = new MockMoviesProvider();
     }
 
     public static App getInstance(){
