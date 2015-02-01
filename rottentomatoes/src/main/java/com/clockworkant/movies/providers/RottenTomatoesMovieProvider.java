@@ -1,12 +1,11 @@
-package com.clockworkant;
+package com.clockworkant.movies.providers;
 
 import com.clockworkant.movies.lib.Movie;
 import com.clockworkant.movies.lib.MoviesProvider;
-import com.clockworkant.retrofit.RTReleasesResponse;
-import com.clockworkant.retrofit.RTService;
+import com.clockworkant.movies.providers.retrofit.RTReleasesResponse;
+import com.clockworkant.movies.providers.retrofit.RTService;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;

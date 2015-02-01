@@ -1,4 +1,4 @@
-package com.clockworkant.movies.mock;
+package com.clockworkant.movies.providers;
 
 import com.clockworkant.movies.lib.Movie;
 import com.clockworkant.movies.lib.MoviesProvider;
@@ -26,7 +26,6 @@ public class MockMoviesProvider implements MoviesProvider {
     }
 
     private static class MockMovie implements Movie {
-
 
         private final String name;
 

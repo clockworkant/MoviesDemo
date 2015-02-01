@@ -1,12 +1,9 @@
-package com.clockworkant.retrofit;
+package com.clockworkant.movies.providers.retrofit;
 
 import com.clockworkant.movies.lib.Movie;
 
 import java.util.ArrayList;
 
-/**
- * Created by alecholmes on 01/02/15.
- */
 public class RTReleasesResponse {
     public ArrayList<RTMovie> movies;
 
