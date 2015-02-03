@@ -11,10 +11,17 @@
         android:name=".App">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="Movies - Good edition" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BadMainActivity"
+            android:label="Movies - Evil Edition" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
