@@ -3,8 +3,8 @@ package com.clockworkant.movies;
 import android.app.Application;
 
 import com.clockworkant.movies.lib.MoviesProvider;
-import com.clockworkant.movies.providers.MockMoviesProvider;
-import com.clockworkant.movies.providers.RottenTomatoesMovieProvider;
+import com.clockworkant.movies.providers.mock.MockMovieProvider;
+import com.clockworkant.movies.providers.rt.RottenTomatoesMovieProvider;
 
 public class App extends Application {
 
@@ -17,7 +17,7 @@ public class App extends Application {
         super.onCreate();
         mApp = this;
         if (mUseMock) {
-            mMoviesProvider = new MockMoviesProvider();
+            mMoviesProvider = new MockMovieProvider();
         } else {
             mMoviesProvider = new RottenTomatoesMovieProvider();
         }

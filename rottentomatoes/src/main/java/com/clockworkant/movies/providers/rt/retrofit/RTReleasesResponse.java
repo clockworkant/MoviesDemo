@@ -1,4 +1,4 @@
-package com.clockworkant.movies.providers.retrofit;
+package com.clockworkant.movies.providers.rt.retrofit;
 
 import com.clockworkant.movies.lib.Movie;
 

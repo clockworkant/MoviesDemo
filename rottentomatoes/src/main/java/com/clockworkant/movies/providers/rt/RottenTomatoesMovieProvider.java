@@ -1,9 +1,9 @@
-package com.clockworkant.movies.providers;
+package com.clockworkant.movies.providers.rt;
 
 import com.clockworkant.movies.lib.Movie;
 import com.clockworkant.movies.lib.MoviesProvider;
-import com.clockworkant.movies.providers.retrofit.RTReleasesResponse;
-import com.clockworkant.movies.providers.retrofit.RTService;
+import com.clockworkant.movies.providers.rt.retrofit.RTReleasesResponse;
+import com.clockworkant.movies.providers.rt.retrofit.RTService;
 
 import java.util.ArrayList;
 

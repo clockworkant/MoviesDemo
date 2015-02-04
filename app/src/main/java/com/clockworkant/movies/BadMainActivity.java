@@ -13,16 +13,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
 /**
  * This was taken and adapted from http://www.vogella.com/code/de.vogella.android.json/src/de/vogella/android/json/ReadJson.html
  * Vogella is a great resource but in this circumstance it is a nightmare.
  */
-public class BadMainActivity extends Activity {
+public class BadMainActivity extends ActionBarActivity {
 
     private TextView mTextView;
 
@@ -30,10 +30,8 @@ public class BadMainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mTextView = (TextView) findViewById(R.id.textview);
         new FetchAndDisplayMoviesTask().execute();
-
     }
 
     private class FetchAndDisplayMoviesTask extends AsyncTask<Void, Void, String> {

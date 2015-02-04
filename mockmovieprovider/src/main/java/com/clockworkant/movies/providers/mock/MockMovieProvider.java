@@ -1,4 +1,4 @@
-package com.clockworkant.movies.providers;
+package com.clockworkant.movies.providers.mock;
 
 import com.clockworkant.movies.lib.Movie;
 import com.clockworkant.movies.lib.MoviesProvider;
@@ -6,7 +6,7 @@ import com.clockworkant.movies.lib.MoviesProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MockMoviesProvider implements MoviesProvider {
+public class MockMovieProvider implements MoviesProvider {
     @Override
     public void getMovies(MoviesCallback moviesCallback) {
         List<Movie> movies = new ArrayList<>();

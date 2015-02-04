@@ -1,4 +1,4 @@
-package com.clockworkant.movies.providers.retrofit;
+package com.clockworkant.movies.providers.rt.retrofit;
 
 import retrofit.Callback;
 import retrofit.http.GET;
