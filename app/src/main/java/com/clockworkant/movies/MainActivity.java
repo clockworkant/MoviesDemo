@@ -21,7 +21,8 @@ public class MainActivity extends ActionBarActivity {
 
         tv = (TextView) findViewById(R.id.textview);
 
-        App.getInstance().getMoviesProvider().getMovies(new MoviesProvider.MoviesCallback() {
+        MoviesProvider moviesProvider = App.getInstance().getMoviesProvider();
+        moviesProvider.getMovies(new MoviesProvider.MoviesCallback() {
             @Override
             public void onMoviesRecieved(List<Movie> movies) {
                 addMovies(movies);
