@@ -25,4 +25,5 @@ dependencies {
     compile project(':movieslibraryspec')
     compile project(':rottentomatoes')
     compile project(':mockmovieprovider')
+    compile 'io.reactivex:rxandroid:0.24.0'
 }

@@ -9,10 +9,16 @@ import com.clockworkant.movies.lib.MoviesProvider;
 
 import java.util.List;
 
+import rx.Subscription;
+import rx.android.app.AppObservable;
+import rx.functions.Action1;
+
 
 public class MainActivity extends ActionBarActivity {
 
     private TextView tv;
+    private Subscription subscription;
+    private MoviesProvider moviesProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,24 +27,29 @@ public class MainActivity extends ActionBarActivity {
 
         tv = (TextView) findViewById(R.id.textview);
 
-        MoviesProvider moviesProvider = App.getInstance().getMoviesProvider();
-        moviesProvider.getMovies(new MoviesProvider.MoviesCallback() {
-            @Override
-            public void onMoviesRecieved(List<Movie> movies) {
-                addMovies(movies);
-            }
-        });
+        moviesProvider = App.getInstance().getMoviesProvider();
+
+
+
     }
 
-    private void addMovies(final List<Movie> movies){
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                for(Movie movie : movies){
-                    tv.append(movie.getName() + '\n');
-                }
-            }
-        });
+    @Override
+    protected void onResume() {
+        super.onResume();
+        subscription = AppObservable.bindActivity(this, moviesProvider.getMovies())
+                .subscribe(new Action1<List<Movie>>() {
+                    @Override
+                    public void call(List<Movie> movies) {
+                        for (Movie movie : movies) {
+                            tv.append(movie.getName() + '\n');
+                        }
+                    }
+                });
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        subscription.unsubscribe();
+    }
 }

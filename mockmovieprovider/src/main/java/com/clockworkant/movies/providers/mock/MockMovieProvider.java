@@ -6,9 +6,14 @@ import com.clockworkant.movies.lib.MoviesProvider;
 import java.util.ArrayList;
 import java.util.List;
 
+import rx.Observable;
+import rx.subjects.BehaviorSubject;
+
 public class MockMovieProvider implements MoviesProvider {
-    @Override
-    public void getMovies(MoviesCallback moviesCallback) {
+
+    private BehaviorSubject<List<Movie>> mMovies;
+
+    public MockMovieProvider() {
         List<Movie> movies = new ArrayList<>();
         movies.add(new MockMovie("Die Hard 3"));
         movies.add(new MockMovie("Pulp Fiction"));
@@ -22,7 +27,13 @@ public class MockMovieProvider implements MoviesProvider {
         movies.add(new MockMovie("How to deal with failure"));
         movies.add(new MockMovie("The Lego Movie"));
         movies.add(new MockMovie("How to choose a new career"));
-        moviesCallback.onMoviesRecieved(movies);
+
+        this.mMovies = BehaviorSubject.create(movies);
+    }
+
+    @Override
+    public Observable<List<Movie>> getMovies() {
+        return mMovies;
     }
 
     private static class MockMovie implements Movie {

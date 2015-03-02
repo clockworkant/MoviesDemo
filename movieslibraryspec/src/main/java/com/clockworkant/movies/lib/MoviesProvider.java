@@ -2,10 +2,8 @@ package com.clockworkant.movies.lib;
 
 import java.util.List;
 
-public interface MoviesProvider {
-    public void getMovies(MoviesCallback moviesCallback);
+import rx.Observable;
 
-    interface MoviesCallback{
-        void onMoviesRecieved(List<Movie> movies);
-    }
+public interface MoviesProvider {
+    public Observable<List<Movie>> getMovies();
 }
